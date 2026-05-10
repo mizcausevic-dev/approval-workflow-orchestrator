@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Approval Workflow Orchestrator Escalation Lane</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1014;
+      --panel: #1a2128;
+      --card: #222c36;
+      --border: #34414f;
+      --text: #f2ede5;
+      --muted: #bcc7cf;
+      --blue: #8ed9ff;
+      --peach: #ffd7a8;
+      --mint: #c8f1a0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; width: 1600px; height: 900px; overflow: hidden;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #0d1014, #0a0d10 82%);
+      color: var(--text);
+    }
+    .frame { width: 1520px; height: 820px; margin: 40px; padding: 40px 42px; border-radius: 34px; border: 1px solid #25323d; background: rgba(26, 33, 40, 0.96); }
+    .eyebrow { color: var(--peach); font-size: 18px; letter-spacing: .32em; text-transform: uppercase; }
+    h1 { margin: 24px 0 22px; max-width: 1180px; font: 700 50px/1.06 Georgia, "Times New Roman", serif; }
+    .layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .panel { border-radius: 28px; border: 1px solid var(--border); background: var(--card); padding: 24px 26px; min-height: 560px; }
+    .label { color: var(--blue); font-size: 14px; letter-spacing: .22em; text-transform: uppercase; }
+    .step { margin-top: 18px; padding: 16px 18px; border-radius: 18px; background: #182129; border: 1px solid #2f3d49; }
+    .step-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #dce8f1; }
+    .step-title { margin-top: 10px; font: 700 28px/1.1 Georgia, "Times New Roman", serif; }
+    .step-copy { margin-top: 8px; color: var(--muted); font-size: 18px; line-height: 1.32; }
+    .status { color: var(--mint); }
+    .terminal { margin-top: 18px; border-radius: 20px; border: 1px solid #3b4f5f; background: #0b1116; padding: 18px 20px; color: #c8f1a0; font: 17px/1.48 Consolas, monospace; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="eyebrow">Escalation Lane</div>
+    <h1>When approval timing compresses, the service turns backlog, exception pressure, and ownership depth into one response order.</h1>
+    <div class="layout">
+      <div class="panel">
+        <div class="label">Current Response Sequence</div>
+        <div class="step">
+          <div class="step-head"><span>Step 1</span><span class="status">Now</span></div>
+          <div class="step-title">Escalate the legal-review lane for `apr-4018`.</div>
+          <div class="step-copy">Only six SLA hours remain, two approvals are still pending, and the request is carrying a launch-critical exception posture.</div>
+        </div>
+        <div class="step">
+          <div class="step-head"><span>Step 2</span><span class="status">Same day</span></div>
+          <div class="step-title">Collapse the remaining approvers into one owner sweep.</div>
+          <div class="step-copy">Legal, security, and deal-desk should move inside the same review window instead of handing off sequentially.</div>
+        </div>
+        <div class="step">
+          <div class="step-head"><span>Step 3</span><span class="status">After signoff</span></div>
+          <div class="step-title">Expand the audit trail before release or commercial commit.</div>
+          <div class="step-copy">The decision should preserve who approved, what exception was accepted, and why the timing lane changed.</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="label">Example Workflow Report</div>
+        <div class="terminal">POST /api/analyze/workflow
+
+{
+  "requestId": "apr-4018",
+  "status": "escalate",
+  "score": 97,
+  "issues": [
+    "sla_pressure",
+    "approval_depth",
+    "policy_exception",
+    "launch_critical",
+    "amount_exposure"
+  ],
+  "recommendedNextAction":
+  "Escalate the exception lane immediately..."
+}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

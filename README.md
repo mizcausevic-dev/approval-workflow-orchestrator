@@ -84,15 +84,15 @@ ranked workflow report + next action
 
 ## Screenshots
 
-### Hero
+### Control Room
 
 ![Hero](screenshots/01-hero.png)
 
-### Stage Grid
+### Workflow Path
 
 ![Stage grid](screenshots/02-stage-grid.png)
 
-### Escalation Lane
+### Execution Stream
 
 ![Escalation lane](screenshots/03-escalation-lane.png)
 
